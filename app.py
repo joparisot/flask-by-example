@@ -31,5 +31,9 @@ app = Flask(__name__)
 def hello():
     return "Yo World!"
 
+@app.route('/<name>')
+def hello_name(name):
+    return "Hello {}!".format(name) + "family name"
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
